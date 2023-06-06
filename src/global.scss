@@ -1,0 +1,73 @@
+:root {
+  --qwik-dark-blue: #006ce9;
+  --qwik-light-blue: #18b6f6;
+  --qwik-light-purple: #ac7ff4;
+  --qwik-dark-purple: #713fc2;
+}
+
+body {
+  background-color: rgb(231, 231, 231);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+}
+
+.carousel {
+  display: flex;
+  padding: 100px 100px;
+  overflow: auto;
+  height: 18rem;
+  color: white;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    width: 14rem;
+    height: 8rem;
+    border-radius: 0.28rem;
+    margin-right: 0.3rem;
+    transition: all 300ms ease;
+    cursor: pointer;
+    scroll-snap-align: start;
+
+    &__poster {
+      border-radius: 0.28rem;
+    }
+
+    &:hover {
+      transform: scale(1.45);
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0, 0, 0, 0.5);
+      z-index: 5;
+
+      &__poster {
+        height: 85%;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .carousel__card__info {
+        display: flex;
+      }
+    }
+
+    &__info {
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.75), 0 6px 6px rgba(0, 0, 0, 0.5);
+      flex-direction: column;
+      background-color: black;
+      border-bottom-left-radius: 0.28rem;
+      border-bottom-right-radius: 0.28rem;
+      display: none;
+      padding: 0.8rem;
+      font-size: 0.75rem;
+
+      div {
+        margin-bottom: 0.25rem;
+      }
+
+      &__detail {
+        font-size: 0.6rem;
+      }
+    }
+  }
+}
